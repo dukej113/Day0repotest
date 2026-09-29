@@ -61,3 +61,35 @@ files, no model files, and no third-party libraries — the whole game is the on
 
 Runs comfortably at 60 fps — the whole game loop costs about 0.25 ms a frame
 with two dozen zombies active, and the scene is around 40 draw calls.
+
+---
+
+# ROAD TRIP (proof of concept)
+
+`road-trip.html` is a separate, mobile-first low-poly driving game built on
+Three.js r128, which it loads from cdnjs. Everything else is inline in that one
+file.
+
+**Play it:** open `road-trip.html` in a mobile or desktop browser. It needs a
+network connection the first time to fetch Three.js.
+
+- **Controls:** swipe left/right, tap the ◀ ▶ buttons, or tap either half of the
+  screen. Arrow keys / `A` `D` work on desktop.
+- **HUD:** fuel %, fatigue %, miles and time of day. The trip is time-compressed:
+  1 mile per second, and 5 in-game minutes per second, so a full day/night
+  cycle takes about 5 minutes. You leave at 4:00 PM, so dusk comes quickly.
+- **Fuel** drains steadily. Running dry ends the trip. Fuel cans on the road
+  give +8%, and hitting slow traffic costs 10%.
+- **Fatigue** builds faster at night. Above 70% your eyes start to blink shut,
+  and at 100% you doze off, which also ends the trip.
+- **Encounters:** every 50 miles a card offers 2–3 choices that change your
+  stats. The first one is always the Buc-ee's stop (+40% fuel, −10 min, or
+  push through). After that you get a random rest area, diner, hitchhiker,
+  gas stop, overlook, detour or motel (the motel only shows up at night).
+- **World:** endless scrolling road with flat-shaded terrain that runs through
+  six biomes (plains, desert, autumn hills, prairie, pine forest, red rock).
+  The roadside is filled from object pools (trees, cacti, rocks, signs,
+  billboards, houses, barns, silos, water towers, gas stations, diners) and
+  lined with power poles, with distant mountains behind. The sky is a stepped
+  gradient with a sun, moon and stars, and at night the headlights, tail
+  lights and building windows light up.
